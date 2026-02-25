@@ -1,0 +1,115 @@
+/* ─── Education Section ─── */
+.education {
+    padding: var(--spacing-section) 0;
+    position: relative;
+}
+
+.education-header {
+    margin-bottom: 3rem;
+}
+
+/* ─── Timeline Layout ─── */
+.education-timeline {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.education-timeline::before {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--glass-border);
+    opacity: 0.5;
+}
+
+.education-item {
+    display: flex;
+    gap: 1.5rem;
+    position: relative;
+}
+
+.edu-icon-wrap {
+    width: 2rem;
+    height: 2rem;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent-primary);
+    flex-shrink: 0;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.education-item:hover .edu-icon-wrap {
+    border-color: var(--color-accent-primary);
+    box-shadow: 0 0 15px var(--color-accent-glow);
+}
+
+.edu-content {
+    flex: 1;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.education-item:last-child .edu-content {
+    border-bottom: none;
+}
+
+.edu-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.edu-institution {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    letter-spacing: -0.01em;
+}
+
+.edu-period {
+    font-family: 'Outfit', monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-accent-primary);
+    background: rgba(34, 211, 238, 0.05);
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.edu-degree {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.edu-details {
+    font-size: 0.85rem;
+    color: var(--color-accent-green);
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 640px) {
+    .edu-main {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}

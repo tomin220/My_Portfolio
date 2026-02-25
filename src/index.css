@@ -1,0 +1,263 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CSS Variables - Dark Theme Color Palette */
+:root {
+  /* Obsidian Night - Deeper, richer foundation */
+  --color-bg-primary: #030610;
+  --color-bg-secondary: #0a0f1d;
+  --color-bg-accent: #111827;
+
+  /* Precision Text Colors */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a1a1aa;
+  --color-text-muted: #71717a;
+
+  /* Cyber Accents */
+  --color-accent-primary: #22d3ee;
+  --color-accent-secondary: #818cf8;
+  --color-accent-green: #4ea000;
+  --color-accent-green-glow: rgba(78, 160, 0, 0.4);
+  --color-accent-hover: #0891b2;
+  --color-accent-gradient: linear-gradient(135deg, #22d3ee 0%, #818cf8 100%);
+  --color-accent-glow: rgba(34, 211, 238, 0.15);
+
+  /* Glassmorphism Refined */
+  --glass-bg: rgba(10, 15, 29, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-blur: 16px;
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+
+  /* Typography Scale - Refined for better density */
+  --font-size-xs: 0.7rem;
+  --font-size-sm: 0.775rem;
+  --font-size-base: 0.875rem;
+  --font-size-lg: 0.95rem;
+  --font-size-xl: 1.1rem;
+  --font-size-2xl: 1.35rem;
+  --font-size-3xl: 1.6rem;
+  --font-size-4xl: 2.15rem;
+  --font-size-5xl: 3rem;
+
+  /* Spacing System - Balanced */
+  --spacing-section: 60px;
+  --spacing-container: 2rem;
+  --spacing-grid-gap: 1.5rem;
+  --max-width-container: 1200px;
+
+
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  overflow-x: hidden;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+#root {
+  width: 100%;
+}
+
+/* Typography Re-refinement */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+}
+
+.section-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.85rem;
+  font-weight: 800;
+  margin-bottom: 3.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  position: relative;
+  background: var(--color-accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  display: block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: var(--color-accent-gradient);
+  opacity: 0.4;
+  border-radius: 99px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  margin-top: -2.5rem;
+  margin-bottom: 4rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.container {
+  max-width: var(--max-width-container);
+  margin: 0 auto;
+  padding: 0 var(--spacing-container);
+}
+
+
+p {
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+}
+
+/* Buttons */
+.interactive {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn {
+  padding: 0.5rem 1.4rem;
+  border-radius: 99px;
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  z-index: 10;
+}
+
+
+.btn-primary {
+  background: var(--color-accent-green);
+  color: #ffffff;
+  box-shadow: 0 0 20px var(--color-accent-green-glow);
+}
+
+.btn-primary:hover {
+  background: #5dbd00;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 30px var(--color-accent-green-glow);
+}
+
+.btn-secondary {
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  color: var(--color-text-primary);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--color-accent-primary);
+  transform: translateY(-2px);
+}
+
+
+/* Selection */
+::selection {
+  background: var(--color-accent-primary);
+  color: var(--color-bg-primary);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-bg-accent);
+  border-radius: 10px;
+  border: 2px solid var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-primary);
+}
+
+/* Custom Utilities - Aceternity inspired */
+.moving-border-container {
+  position: relative;
+  padding: 2px;
+  overflow: hidden;
+  border-radius: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.moving-border-container.circular {
+  border-radius: 50%;
+}
+
+.moving-border {
+  position: absolute;
+  inset: -100%;
+  background: conic-gradient(from 0deg,
+      transparent 0deg,
+      transparent 120deg,
+      var(--color-accent-primary) 180deg,
+      transparent 240deg,
+      transparent 360deg);
+  z-index: 0;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  :root {
+    --font-size-3xl: 1.75rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+    --spacing-section: 80px;
+    --spacing-container: 1.5rem;
+  }
+
+  .section-title {
+    margin-bottom: 4rem;
+  }
+}

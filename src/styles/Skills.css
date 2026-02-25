@@ -1,0 +1,143 @@
+/* ─── Skills Section ─── */
+.skills {
+  padding: var(--spacing-section) 0;
+  position: relative;
+}
+
+.skills-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* ─── Uniform 3-column grid ─── */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  max-width: var(--max-width-container);
+  margin: 0 auto;
+}
+
+/* ─── Card Base ─── */
+.bento-item {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 1.75rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+  min-height: 180px;
+}
+
+.bento-item {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+/* ─── Hover States ─── */
+.bento-item:hover {
+  border-color: rgba(34, 211, 238, 0.25);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* ─── Spotlight Glow ─── */
+.bento-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(500px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(34, 211, 238, 0.07),
+      transparent 40%);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.bento-item:hover .bento-glow {
+  opacity: 1;
+}
+
+/* ─── Card Content ─── */
+.bento-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* ─── Card Header ─── */
+.bento-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.bento-icon {
+  color: var(--color-accent-primary);
+  opacity: 0.85;
+  flex-shrink: 0;
+}
+
+.bento-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ─── Skill Tags ─── */
+.bento-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  align-content: flex-start;
+}
+
+.skill-tag {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--color-text-secondary);
+  padding: 0.4rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+
+.skill-tag:hover {
+  background: var(--color-accent-primary);
+  color: var(--color-bg-primary);
+  border-color: var(--color-accent-primary);
+  transform: translateY(-2px);
+}
+
+/* ─── Responsive: Tablet ─── */
+@media (max-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+/* ─── Responsive: Mobile ─── */
+@media (max-width: 640px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+  }
+
+  .bento-item {
+    padding: 1.5rem;
+    min-height: unset;
+  }
+}

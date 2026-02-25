@@ -1,0 +1,100 @@
+.experience {
+  padding: var(--spacing-section) 0;
+  position: relative;
+}
+
+.experience-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: var(--max-width-container);
+  margin: 0 auto;
+}
+
+
+
+.experience-box {
+  background: rgba(10, 15, 29, 0.4);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 2rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-box:hover {
+  transform: translateY(-5px);
+  border-color: rgba(34, 211, 238, 0.15);
+  background: rgba(34, 211, 238, 0.03);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.experience-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-period {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--color-accent-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.75rem;
+}
+
+.experience-title {
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.02em;
+}
+
+.experience-company {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.experience-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.experience-desc {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.experience-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.exp-pill {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--color-text-secondary);
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid var(--glass-border);
+}
+
+@media (max-width: 868px) {
+  .experience-box {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+}

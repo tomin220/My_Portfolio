@@ -1,0 +1,138 @@
+.about {
+  padding: var(--spacing-section) 0;
+  position: relative;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.section-title.left {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.section-title.left::after {
+  left: 0;
+  transform: none;
+}
+
+.about-narrative {
+  margin-bottom: 2rem;
+}
+
+.about-narrative p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin-bottom: 1rem;
+  letter-spacing: 0.01em;
+}
+
+.text-highlight {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+
+.about-visual-card {
+  width: 280px;
+  height: 280px;
+  background: var(--color-bg-secondary);
+  border-radius: 20px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 60px rgba(34, 211, 238, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+.about-visual-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(34, 211, 238, 0.15) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.2;
+}
+
+.visual-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.visual-text {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+  background: var(--color-accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  letter-spacing: -0.02em;
+}
+
+.personal-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--glass-border);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  letter-spacing: 0.15em;
+  font-weight: 800;
+}
+
+.stat-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-accent-primary);
+  letter-spacing: -0.01em;
+}
+
+
+@media (max-width: 1024px) {
+  .about-grid {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 868px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-image-wrapper {
+    order: -1;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .section-title.left {
+    text-align: center;
+  }
+
+  .section-title.left::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

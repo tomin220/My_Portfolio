@@ -1,0 +1,70 @@
+/* ─── Activities Section ─── */
+.activities {
+    padding: var(--spacing-section) 0;
+}
+
+.activities-header {
+    margin-bottom: 3.5rem;
+}
+
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.activity-card {
+    background: rgba(10, 15, 29, 0.4);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 2.25rem;
+    backdrop-filter: blur(12px);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 100%;
+}
+
+.activity-icon-box {
+    width: 3rem;
+    height: 3rem;
+    background: rgba(34, 211, 238, 0.05);
+    border: 1px solid rgba(34, 211, 238, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent-primary);
+    flex-shrink: 0;
+}
+
+.activity-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 0.25rem;
+    letter-spacing: -0.01em;
+}
+
+.activity-org {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-accent-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.activity-desc {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .activity-card {
+        padding: 1.75rem;
+    }
+}
