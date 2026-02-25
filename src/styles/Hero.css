@@ -378,15 +378,29 @@
   .hero-trust-signal {
     justify-content: center;
   }
+}
+
+@media (max-width: 768px) {
+  .hero-name-char {
+    font-size: 2.75rem;
+  }
+
+  .hero-role {
+    font-size: 1.85rem;
+    height: 2.2rem;
+  }
 
   .hero-visual {
     justify-content: center;
     order: -1;
+    padding-top: 2rem;
   }
 
   .visual-outer {
     width: 260px;
     height: 260px;
+    margin-top: 1rem;
+    transform: none;
   }
 
   .hero-actions {
@@ -396,6 +410,7 @@
 
   .hero-expertise-grouped {
     align-items: center;
+    gap: 1.25rem;
   }
 
   .expertise-row {
@@ -409,8 +424,17 @@
 }
 
 @media (max-width: 480px) {
+  .hero-name-char {
+    font-size: 2.15rem;
+  }
+
+  .hero-role {
+    font-size: 1.4rem;
+    height: 1.7rem;
+  }
+
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
 
   .visual-outer {

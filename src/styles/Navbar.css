@@ -108,6 +108,10 @@
 }
 
 @media (max-width: 768px) {
+  .nav-logo {
+    font-size: 1.25rem;
+  }
+
   .nav-menu {
     position: fixed;
     right: -100%;

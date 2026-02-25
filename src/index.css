@@ -253,11 +253,18 @@ p {
     --font-size-3xl: 1.75rem;
     --font-size-4xl: 2.25rem;
     --font-size-5xl: 3rem;
-    --spacing-section: 80px;
-    --spacing-container: 1.5rem;
+    --spacing-section: 60px;
+    /* Consistently tight for mobile */
+    --spacing-container: 1.25rem;
   }
 
   .section-title {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --spacing-container: 1rem;
   }
 }
